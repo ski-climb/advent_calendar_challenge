@@ -40,9 +40,9 @@ def day_2b(input)
   ready_to_sum = [[0,0]]
   input.each do |row|
     row.map do |number|
-      row.find do |item|
-        if (item % number) == 0 && (item / number) > 1
-          ready_to_sum << [item, number]
+      row.find do |other_number_in_same_row|
+        if (other_number_in_same_row % number) == 0 && (other_number_in_same_row / number) > 1
+          ready_to_sum << [other_number_in_same_row, number]
         end
       end
     end
